@@ -6,10 +6,8 @@
 #define MAX_LEN 250
 
 int main(int argc, char *argv[]){
-        int n, count = 0;
         int j = 0;
         int s = 0;
-        int t = 0;
         int i = 0;
         long k = 0;
         FILE *in;
