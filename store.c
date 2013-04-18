@@ -9,6 +9,7 @@ int main(int argc, char *argv[]){
         int n, count = 0;
         int j = 0;
         int s = 0;
+        int t = 0;
         int i = 0;
         long k = 0;
         FILE *in;
@@ -37,7 +38,24 @@ int main(int argc, char *argv[]){
         for(j = 0; j < numPurchases; j++){
         	fscanf (in, "%d", &i); 
         	fscanf (in, "%ld", &k); 
-        	insertBack(numOfCustomersArray[i-1], k);
+        	if(isEmpty(numOfCustomersArray[i-1])){
+        		insertBack(numOfCustomersArray[i-1], k);
+        	} else {
+        		moveFirst(numOfCustomersArray[i-1]);
+        		for(s = 0; s < getLength(numOfCustomersArray[i-1]);s++){
+        			if(k >= getCurrent(numOfCustomersArray[i-1])){
+        				moveNext(numOfCustomersArray[i-1]);
+        				if(offEnd(numOfCustomersArray[i-1])){
+        					insertBack(numOfCustomersArray[i-1], k);
+        					break;
+        				}
+        			} else if(k < getCurrent(numOfCustomersArray[i-1])){
+        				insertBeforeCurrent(numOfCustomersArray[i-1], k);
+        				break;
+        			}
+        		}
+        	}
+        	
         }
 
         /*print out the results*/
@@ -48,6 +66,7 @@ int main(int argc, char *argv[]){
         }
 
         for(s = 0; s < numOfCustomers; s++){
+        	printf("hello\n");
         	freeList(&(numOfCustomersArray[s]));
         }
         fclose(in);

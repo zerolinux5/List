@@ -282,10 +282,10 @@ void movePrev(ListRef L){
 
 void moveNext(ListRef L){
 	if(L==NULL){
-		printf("List error: calling moveNext on NULL LeftRef\n");
+		printf("List error: calling moveNext on NULL ListRef\n");
 		exit(1);
 	} else if(isEmpty(L)){
-		printf("List error:calling moveNext on empty List\n");
+		printf("List error: calling moveNext on empty List\n");
 		exit(1);
 	} else if(offEnd(L)){
 		printf("List error: calling moveNext when current = NULL\n");
@@ -301,7 +301,7 @@ void deleteFront(ListRef L){
 	NodeRef N = NULL;
 
 	if(L == NULL){
-		printf("List error: calling deletfront on Null ListRef\n");
+		printf("List error: calling deletefront on Null ListRef\n");
 		exit(1);
 	}
 	if( isEmpty(L)){
