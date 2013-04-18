@@ -65,10 +65,9 @@ int main(int argc, char *argv[]){
         	printList(numOfCustomersArray[s]);
         }
 
-        for(s = 0; s < numOfCustomers; s++){
-        	printf("hello\n");
-        	freeList(&(numOfCustomersArray[s]));
-        }
+        //for(s = 0; s < numOfCustomers; s++){
+        //	freeList(&(numOfCustomersArray[s]));
+        //}
         fclose(in);
         return(0);
 }

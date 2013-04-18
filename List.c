@@ -45,7 +45,7 @@ ListRef newList(void){
 }
 
 void freeList(ListRef* pL){
-	if(pL==NULL && *pL==NULL) {return;}
+	if(pL!=NULL && *pL==NULL) {return;}
 	while( !isEmpty(*pL)) {
         deleteFront(*pL);
 	}
@@ -305,7 +305,7 @@ void deleteFront(ListRef L){
 		exit(1);
 	}
 	if( isEmpty(L)){
-		printf("List error: calling deletefront on empty queueRef\n");
+		printf("List error: calling deletefront on empty ListRef\n");
 		exit(1);
 	}
 	N = L->front;
