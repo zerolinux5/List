@@ -32,18 +32,20 @@ int main(int argc, char *argv[]){
         for(s = 0; s < numOfCustomers; s++){
         	numOfCustomersArray[s] = newList();
         }
-
-        fgets(line, MAX_LEN, in);
-        token = strcat(line, "\n");
-        tokenlist[0] = '\0';
-        strcat(tokenlist, token);
-        int numPurchases = atoi(tokenlist);
+        int numPurchases;
+        fscanf (in, "%d", &numPurchases); 
         for(j = 0; j < numPurchases; j++){
         	fscanf (in, "%d", &i); 
         	fscanf (in, "%ld", &k); 
         	insertBack(numOfCustomersArray[i-1], k);
         }
-        printList(numOfCustomersArray[i]);
+
+        /*print out the results*/
+        printf("Customer Number		:		Book ID \n");
+        for(s = 0; s < numOfCustomers; s++){
+        	printf("%d : ", s+1);
+        	printList(numOfCustomersArray[s]);
+        }
 
         for(s = 0; s < numOfCustomers; s++){
         	freeList(&(numOfCustomersArray[s]));
