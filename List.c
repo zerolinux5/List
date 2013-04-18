@@ -186,7 +186,7 @@ void insertFront(ListRef L, long data){
 
 	if(L==NULL){
 		printf("List error: calling insertFront on NULL listRef\n");
-	exit(1);
+		exit(1);
 	}
 	if(isEmpty(L)) {L->front = L->back = N;}
 	else {	
@@ -195,6 +195,14 @@ void insertFront(ListRef L, long data){
 		L->front = N;
 	}
 	L->length++;
+}
+
+void moveFirst(ListRef L){
+	L->current = L->front;
+}
+
+void moveLast(ListRef L){
+	L->current = L->back;
 }
 
 void insertAfterCurrent(ListRef L, long data){

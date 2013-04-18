@@ -35,6 +35,10 @@ void insertBack(ListRef L, long data);
 
 void insertFront(ListRef L, long data);
 
+void moveFirst(ListRef L);
+	
+void moveLast(ListRef L);
+
 void moveTo(ListRef L, int i);
 
 void movePrev(ListRef L);
