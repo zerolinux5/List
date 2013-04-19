@@ -89,7 +89,7 @@ int main(int argc, char *argv[])
 	printList(A);
 	printList(B);
 	printf("\n");
-	ListRef C = newList();
+	ListRef C;
 	C = copyList(A);
 	printList(C);
 	printf("\n");

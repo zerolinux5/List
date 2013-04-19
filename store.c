@@ -11,9 +11,6 @@ int main(int argc, char *argv[]){
         int i = 0;
         long k = 0;
         FILE *in;
-        char line[MAX_LEN];
-        char tokenlist[MAX_LEN];
-        char *token;
 
         in = fopen(argv[1], "r");
         if(in==NULL){
@@ -21,11 +18,8 @@ int main(int argc, char *argv[]){
                 exit(1);
         }
 
-        fgets(line, MAX_LEN, in);
-        token = strcat(line, "\n");
-        tokenlist[0] = '\0';
-        strcat(tokenlist, token);
-        int numOfCustomers = atoi(tokenlist);
+        int numOfCustomers;
+        fscanf(in, "%d", &numOfCustomers);
 
         ListRef numOfCustomersArray[numOfCustomers];
         for(s = 0; s < numOfCustomers; s++){
@@ -63,9 +57,9 @@ int main(int argc, char *argv[]){
         	printList(numOfCustomersArray[s]);
         }
 
-        //for(s = 0; s < numOfCustomers; s++){
-        //	freeList(&(numOfCustomersArray[s]));
-        //}
+		for(s = 0; s < numOfCustomers; s++){
+			free(numOfCustomersArray[s]);
+		}
         fclose(in);
         return(0);
 }

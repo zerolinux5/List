@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include "List.h"
 
+/*setting up the nodes and the list/ the free and the nes*/
 typedef struct Node{
 	long data;
 	struct Node *next;
@@ -166,12 +167,11 @@ void makeEmpty(ListRef L){
 
 void insertBack(ListRef L, long data)
 {
-	NodeRef N = newNode(data);
-
 	if(L==NULL){
 		printf("List error: calling insertBack on Null ListRef\n");
 	exit(1);
 	}
+	NodeRef N = newNode(data);
 	if(isEmpty(L)) {L->front = L->back = N;}
 	else { 
 		(L->back)->next = N; 
@@ -182,12 +182,11 @@ void insertBack(ListRef L, long data)
 }
 
 void insertFront(ListRef L, long data){
-	NodeRef N = newNode(data);
-
 	if(L==NULL){
 		printf("List error: calling insertFront on NULL listRef\n");
 		exit(1);
 	}
+	NodeRef N = newNode(data);
 	if(isEmpty(L)) {L->front = L->back = N;}
 	else {	
 		(L->front)->prev = N;
