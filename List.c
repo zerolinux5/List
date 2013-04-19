@@ -169,7 +169,7 @@ void insertBack(ListRef L, long data)
 {
 	if(L==NULL){
 		printf("List error: calling insertBack on Null ListRef\n");
-	exit(1);
+		exit(1);
 	}
 	NodeRef N = newNode(data);
 	if(isEmpty(L)) {L->front = L->back = N;}
@@ -233,10 +233,10 @@ void insertBeforeCurrent(ListRef L, long data){
 		printf("List error: calling insertBeforeCurrent on Null curren\n");
 		exit(1);
 	}
-	NodeRef N = newNode(data);
 	if(L->front == L->current){
 		insertFront(L, data);
 	} else {
+		NodeRef N = newNode(data);
 		N->next = L->current;
 		N->prev = L->current->prev;
 		N->prev->next = N;

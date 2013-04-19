@@ -57,9 +57,9 @@ int main(int argc, char *argv[]){
         	printList(numOfCustomersArray[s]);
         }
 
-		for(s = 0; s < numOfCustomers; s++){
-			free(numOfCustomersArray[s]);
-		}
+	for(s = 0; s < numOfCustomers; s++){
+		free(numOfCustomersArray[s]);
+	}
         fclose(in);
         return(0);
 }
