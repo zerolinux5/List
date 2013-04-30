@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include "List.h"
 
 #define MAX_LEN 250
@@ -32,6 +31,7 @@ int main(int argc, char *argv[]){
         	fscanf (in, "%ld", &k); 
         	if(isEmpty(numOfCustomersArray[i-1])){
         		insertBack(numOfCustomersArray[i-1], k);
+                        break;
         	} else {
         		moveFirst(numOfCustomersArray[i-1]);
         		for(s = 0; s < getLength(numOfCustomersArray[i-1]);s++){
